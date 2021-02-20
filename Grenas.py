@@ -1,5 +1,5 @@
 #Puro pendejo revisa este codigo
-#EL RETURN ESTA EN COMENTARIO PARA QUE NO CHINGUE XDDDD
+#EL RETURN ESTA EN COMENTARIO PARA QUE LO CAMBIES PADRE XDDDD
 
 def LOOK(secuencia,inicial,tam):
 #INICIA CHAMBA*-----------------------------------------------------
@@ -47,9 +47,9 @@ def LOOK(secuencia,inicial,tam):
 
 #return [cActual, secuencia, tEspera, desp]
 
-def CLOOK(secuencia,inicial,tam):
+def CSCAN(secuencia,inicial,tam):
 #INICIA CHAMBA*-----------------------------------------------------
-    print('C-LOOK**************************************')
+    print('C-SCAN**************************************')
     izq = []
     der = []
     cActual = []
@@ -64,8 +64,10 @@ def CLOOK(secuencia,inicial,tam):
             der.append(secuencia[i])
         pass
 
+    izq.append(0)
     izq.sort()
     izq.reverse()
+    der.append(199)
     der.sort()
     der.reverse()
     aux = []
@@ -94,7 +96,7 @@ def CLOOK(secuencia,inicial,tam):
     print('TIEMPO DE ESPERA: ',tEspera)
     print('DESPLAZAMIENTO: ',desp)
 
-#return [cActual, secuencia, tEspera, desp]
+#return [cActual, aux, tEspera, desp]
 
 def datos():
     global secuencia
