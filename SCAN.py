@@ -2,57 +2,47 @@ import areli
     
 def scan(bit, array, inicial):
   array.append(inicial)
-  
   array = areli.quickSort(array)
-  print(array)
   n = 0
   cActual = []
   cSolicitado = []
   tiempo = []
-  dezplazamiento = []
+  desplazamiento = []
   if (bit == 0):
     for i in range(array.index(inicial),-1,-1):
       if (i != 0):
         cActual.append(array[i])
         cSolicitado.append(array[i-1])
-        dezplazamiento.append(cActual[n]-cSolicitado[n])  
+        desplazamiento.append(cActual[n]-cSolicitado[n])  
         if (len(tiempo) == 0):
           tiempo.append(0)
         else:
-          tiempo.append(tiempo[n-1]+dezplazamiento[n-1])
+          tiempo.append(tiempo[n-1]+desplazamiento[n-1])
       else:	
         cActual.append(array[i])
         cSolicitado.append(array[array.index(inicial)+1])
-        dezplazamiento.append(abs(cActual[n]-cSolicitado[n]))
+        desplazamiento.append(abs(cActual[n]-cSolicitado[n]))
         if (len(tiempo) == 0):
           tiempo.append(0)
         else:
-          tiempo.append(tiempo[n-1]+dezplazamiento[n-1])	
+          tiempo.append(tiempo[n-1]+desplazamiento[n-1])	
       n = n + 1
-    #array.remove(inicial)
-    print(array)
     for i in array[n:len(array)-1]:
-      print(i)
       cActual.append(i)
       cSolicitado.append(array[array.index(i)+1])  
-      dezplazamiento.append(abs(cActual[n]-cSolicitado[n]))  
-      tiempo.append(tiempo[n-1]+dezplazamiento[n-1])  
+      desplazamiento.append(abs(cActual[n]-cSolicitado[n]))  
+      tiempo.append(tiempo[n-1]+desplazamiento[n-1])  
       n = n + 1
-      #array.index(i)-1
   else:
     n = 0
     for i in array[n:len(array)-1]:
-      print(i)
       cActual.append(i)
       cSolicitado.append(array[array.index(i)+1])  
-      dezplazamiento.append(abs(cActual[n]-cSolicitado[n]))  
-      tiempo.append(tiempo[n-1]+dezplazamiento[n-1])  
+      desplazamiento.append(abs(cActual[n]-cSolicitado[n]))  
+      tiempo.append(tiempo[n-1]+desplazamiento[n-1])  
       n = n + 1
+  return [cActual, cSolicitado, tiempo, desplazamiento]   
 
-  print(cActual)
-  print(cSolicitado)
-  print(tiempo)
-  print(dezplazamiento)
 
 	
 	
