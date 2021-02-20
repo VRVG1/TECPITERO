@@ -9,13 +9,8 @@ Original file is located at
 
 #@markdown Metodo para validar valores introducidos
 
-while(True):
-  dato = int(input('Ingresar un valor del 0 al 199: '))
-  if(validacion(datoIn)):
-    break:
-
 def validacion(datoIn):
-  if(datoIn < 0 and datoIn > 199)
+  if(datoIn < 0 and datoIn > 199):
     print('Ingrese un valor valido en el rango del 0 al 199')
     return False
   return True
@@ -69,3 +64,8 @@ def puntoMedio(array, incial):
 A = [14, 37, 65, 67, 98, 122, 124, 183]
 inicial = 66
 puntoMedio(A, inicial)
+
+while(True):
+  dato = int(input('Ingresar un valor del 0 al 199: '))
+  if(validacion(dato)):
+    break
