@@ -1,24 +1,9 @@
-def quickSort(array):
-  menor = []
-  igual = []
-  mayor = []
-  if len(array) > 1:
-    pivote = array[0]
-    for i in array:
-      if i < pivote:
-        menor.append(i)
-      elif i == pivote:
-        igual.append(i)
-      else:
-        mayor.append(i)
-    return quickSort(menor)+igual+quickSort(mayor)
-  else:
-    return array
+import areli
     
 def scan(bit, array, inicial):
   array.append(inicial)
   
-  array = quickSort(array)
+  array = areli.quickSort(array)
   print(array)
   n = 0
   cActual = []
