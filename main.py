@@ -30,9 +30,9 @@ import SSTF
 
 
 class Main:
-    inicial = 53
+    inicial = None
     isDone = False
-    buffer_datos = [98, 183, 37, 122, 14, 124, 65, 67]
+    buffer_datos = []
     tableau = []
 
     def print_tableau(self, tableau):
@@ -157,7 +157,7 @@ Del [1-7] que desea realizar? : """
         pass
 
     def init(self):
-        #self.ingreso_peticiones()
+        self.ingreso_peticiones()
         self.menu()
         pass
 
