@@ -55,7 +55,6 @@ def CSCAN(secuencia,inicial,tam):
     cActual = []
     tEspera = []
     desp = []
-    aux = 0
 
     for i in range(tam):
         if secuencia[i]<inicial:
@@ -140,7 +139,7 @@ def datos():
 
 datos()
 LOOK(secuencia,inicial,tam)
-CLOOK(secuencia,inicial,tam)
+CSCAN(secuencia,inicial,tam)
 
 #DOSCIENTAS POSICIONES MAX EN TAM
 #INICIAL LA MISMA RESTRICCION
