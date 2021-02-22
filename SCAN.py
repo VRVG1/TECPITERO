@@ -1,43 +1,44 @@
 import areli
     
 def scan(bit, array, inicial):
-  array.append(inicial)
-  array = areli.quickSort(array)
+  entry = array.copy()
+  entry.append(inicial)
+  entry = areli.quickSort(entry)
   n = 0
   cActual = []
   cSolicitado = []
   tiempo = []
   desplazamiento = []
   if (bit == 0):
-    for i in range(array.index(inicial),-1,-1):
+    for i in range(entry.index(inicial),-1,-1):
       if (i != 0):
-        cActual.append(array[i])
-        cSolicitado.append(array[i-1])
+        cActual.append(entry[i])
+        cSolicitado.append(entry[i-1])
         desplazamiento.append(cActual[n]-cSolicitado[n])  
         if (len(tiempo) == 0):
           tiempo.append(0)
         else:
           tiempo.append(tiempo[n-1]+desplazamiento[n-1])
       else:	
-        cActual.append(array[i])
-        cSolicitado.append(array[array.index(inicial)+1])
+        cActual.append(entry[i])
+        cSolicitado.append(entry[entry.index(inicial)+1])
         desplazamiento.append(abs(cActual[n]-cSolicitado[n]))
         if (len(tiempo) == 0):
           tiempo.append(0)
         else:
           tiempo.append(tiempo[n-1]+desplazamiento[n-1])	
       n = n + 1
-    for i in array[n:len(array)-1]:
+    for i in entry[n:len(entry)-1]:
       cActual.append(i)
-      cSolicitado.append(array[array.index(i)+1])  
+      cSolicitado.append(entry[entry.index(i)+1])
       desplazamiento.append(abs(cActual[n]-cSolicitado[n]))  
       tiempo.append(tiempo[n-1]+desplazamiento[n-1])  
       n = n + 1
   else:
     n = 0
-    for i in array[n:len(array)-1]:
+    for i in entry[n:len(entry)-1]:
       cActual.append(i)
-      cSolicitado.append(array[array.index(i)+1])  
+      cSolicitado.append(entry[entry.index(i)+1])
       desplazamiento.append(abs(cActual[n]-cSolicitado[n]))  
       tiempo.append(tiempo[n-1]+desplazamiento[n-1])  
       n = n + 1
