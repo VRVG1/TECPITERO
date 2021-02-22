@@ -34,13 +34,9 @@ def quickSort(array):
   else:
     return array
 
-A = [98,183,37,122,14,124,65,67]
-print(A)
-print(quickSort(A))
-
 #@markdown Encontrar punto medio del arreglo
 
-def puntoMedio(array, incial):
+def puntoMedio(array, inicial):
   izq = None
   der = None
   for i in range(len(array)):
@@ -48,19 +44,22 @@ def puntoMedio(array, incial):
       if (i - 1 == -1):
         izq = None
         der = array[i]
-        print('Se uso 1')
+        #print('Se uso 1')
         break
       else:
         izq = array[i - 1]
         der = array[i]
-        print('Se uso 1 alt')
+        #print('Se uso 1 alt')
         break
   if (izq == None and der == None):
     izq = array[-1]
     der = None
-    print('Es digito es mayor a que existe en el arreglo')
-  print('El punto de atras es,', izq, 'el de adelante es', der)
+    #print('Es digito es mayor a que existe en el arreglo')
+  #print('El punto de atras es,', izq, 'el de adelante es', der)
+  return izq, der
 
+
+"""
 A = [14, 37, 65, 67, 98, 122, 124, 183]
 inicial = 66
 puntoMedio(A, inicial)
@@ -69,3 +68,4 @@ while(True):
   dato = int(input('Ingresar un valor del 0 al 199: '))
   if(validacion(dato)):
     break
+"""
