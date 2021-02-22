@@ -28,6 +28,7 @@
 
 import FCFS
 import SSTF
+import SCAN
 import Grenas
 import VictorCLook
 
@@ -111,6 +112,26 @@ class Main:
             pass  # pass de while
         pass  # pass de la funcion
 
+    def direccion_scan(self):
+        menu_dir = """
+DIRECCIONES DEL METODO SCAN
+    [0] Abajo
+    [1] Arriba
+
+Entre [0-1] que direccion desea que tome el metodo SCAN? : """
+        bit = -1
+        while(True):
+            try:
+                bit = int(input(menu_dir))
+                if bit == 0 or bit == 1:
+                    break
+                else:
+                    print('\nLa opcion que ingreso no existe, por favor, vuelva a intentarlo.\n')
+            except ValueError:
+                print('\nEl valor que ingreso no es un numero, por favor, vuelva a intentarlo.\n')
+        return bit
+        pass
+
     def metodos(self, opc):
         if opc == 1:    # FCFS
             print("\n==============================    FIRST COME FIRST SERVED   ==============================\n")
@@ -120,6 +141,8 @@ class Main:
             self.tableau = SSTF.SSTF(self.buffer_datos, self.inicial)
         elif opc == 3:  # SCAN
             print("\n==============================             SCAN             ==============================\n")
+            bit = self.direccion_scan()
+            self.tableau = SCAN.scan(bit, self.buffer_datos, self.inicial)
         elif opc == 4:  # C-SCAN
             print("\n==============================            C-SCAN            ==============================\n")
             self.tableau = Grenas.CSCAN(self.buffer_datos, self.inicial, len(self.buffer_datos))
