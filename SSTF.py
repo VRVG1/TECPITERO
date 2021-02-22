@@ -2,7 +2,6 @@ import areli
 
 
 def SSTF(input_array, inicial):
-    print("\n==============================   SHORTEST SEEK TIME FIRST   ==============================\n")
     entry = areli.quickSort(input_array)    # entry es el arreglo de datos ordenados de menor a mayor
     pointer = inicial
 

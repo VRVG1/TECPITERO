@@ -26,8 +26,10 @@
 #
 # ================================================================================================
 
+import FCFS
 import SSTF
 import Grenas
+import VictorCLook
 
 
 class Main:
@@ -110,23 +112,29 @@ class Main:
         pass  # pass de la funcion
 
     def metodos(self, opc):
-        if opc == 1:
-            print("Poner la llamada de la función FCFS")
-        elif opc == 2:
+        if opc == 1:    # FCFS
+            print("\n==============================    FIRST COME FIRST SERVED   ==============================\n")
+            self.tableau = FCFS.fcfs(self.buffer_datos, self.inicial)
+        elif opc == 2:  # SSTF
+            print("\n==============================   SHORTEST SEEK TIME FIRST   ==============================\n")
             self.tableau = SSTF.SSTF(self.buffer_datos, self.inicial)
-        elif opc == 3:
-            print("Poner la llamada de la función SCAN")
-        elif opc == 4:
+        elif opc == 3:  # SCAN
+            print("\n==============================             SCAN             ==============================\n")
+        elif opc == 4:  # C-SCAN
+            print("\n==============================            C-SCAN            ==============================\n")
             self.tableau = Grenas.CSCAN(self.buffer_datos, self.inicial, len(self.buffer_datos))
-        elif opc == 5:
+        elif opc == 5:  # LOOK
+            print("\n==============================             LOOK             ==============================\n")
             self.tableau = Grenas.LOOK(self.buffer_datos, self.inicial, len(self.buffer_datos))
-        elif opc == 6:
-            print("Poner la llamada de la función C-LOOK")
-        elif opc == 7:
+        elif opc == 6:  # C-LOOK
+            print("\n==============================            C-LOOK            ==============================\n")
+            self.tableau = VictorCLook.c_look(self.buffer_datos, self.inicial)
+        elif opc == 7:  # Salir
             self.isDone = True
 
         if self.tableau and not self.isDone:
             self.print_tableau(self.tableau)
+            self.tableau = []
         pass
 
     def menu(self):
