@@ -27,6 +27,7 @@
 # ================================================================================================
 
 import SSTF
+import Grenas
 
 
 class Main:
@@ -112,18 +113,20 @@ class Main:
         if opc == 1:
             print("Poner la llamada de la función FCFS")
         elif opc == 2:
-            tableau = SSTF.SSTF(self.buffer_datos, self.inicial)
-            self.print_tableau(tableau)
+            self.tableau = SSTF.SSTF(self.buffer_datos, self.inicial)
         elif opc == 3:
             print("Poner la llamada de la función SCAN")
         elif opc == 4:
-            print("Poner la llamada de la función C-SCAN")
+            self.tableau = Grenas.CSCAN(self.buffer_datos, self.inicial, len(self.buffer_datos))
         elif opc == 5:
-            print("Poner la llamada de la función LOOK")
+            self.tableau = Grenas.LOOK(self.buffer_datos, self.inicial, len(self.buffer_datos))
         elif opc == 6:
             print("Poner la llamada de la función C-LOOK")
         elif opc == 7:
             self.isDone = True
+
+        if self.tableau and not self.isDone:
+            self.print_tableau(self.tableau)
         pass
 
     def menu(self):

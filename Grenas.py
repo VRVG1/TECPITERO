@@ -3,7 +3,7 @@
 
 def LOOK(secuencia,inicial,tam):
 #INICIA CHAMBA*-----------------------------------------------------
-    print('LOOK**************************************')
+    print('\nLOOK**************************************\n')
     izq = []
     der = []
     cActual = []
@@ -40,16 +40,15 @@ def LOOK(secuencia,inicial,tam):
     cActual.pop()
     tEspera.pop()
 
-    print('CILINDRO ACTUAL: ',cActual)
-    print('CILINDRO SOLICITADO: ',secuencia)
-    print('TIEMPO DE ESPERA: ',tEspera)
-    print('DESPLAZAMIENTO: ',desp)
-
-#return [cActual, secuencia, tEspera, desp]
+    #print('CILINDRO ACTUAL: ',cActual)
+    #print('CILINDRO SOLICITADO: ',secuencia)
+    #print('TIEMPO DE ESPERA: ',tEspera)
+    #print('DESPLAZAMIENTO: ',desp)
+    return [cActual, secuencia, tEspera, desp]
 
 def CSCAN(secuencia,inicial,tam):
 #INICIA CHAMBA*-----------------------------------------------------
-    print('C-SCAN**************************************')
+    print('\nC-SCAN**************************************\n')
     izq = []
     der = []
     cActual = []
@@ -90,12 +89,12 @@ def CSCAN(secuencia,inicial,tam):
     cActual.pop()
     tEspera.pop()
 
-    print('CILINDRO ACTUAL: ',cActual)
-    print('CILINDRO SOLICITADO: ',aux)
-    print('TIEMPO DE ESPERA: ',tEspera)
-    print('DESPLAZAMIENTO: ',desp)
+    #print('CILINDRO ACTUAL: ',cActual)
+    #print('CILINDRO SOLICITADO: ',aux)
+    #print('TIEMPO DE ESPERA: ',tEspera)
+    #print('DESPLAZAMIENTO: ',desp)
+    return [cActual, aux, tEspera, desp]
 
-#return [cActual, aux, tEspera, desp]
 
 def datos():
     global secuencia
@@ -137,9 +136,9 @@ def datos():
             print('Solo se aceptan numeros enteros')
     pass
 
-datos()
-LOOK(secuencia,inicial,tam)
-CSCAN(secuencia,inicial,tam)
+#datos()
+#LOOK(secuencia,inicial,tam)
+#CSCAN(secuencia,inicial,tam)
 
 #DOSCIENTAS POSICIONES MAX EN TAM
 #INICIAL LA MISMA RESTRICCION
