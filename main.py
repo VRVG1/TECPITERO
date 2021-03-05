@@ -51,7 +51,12 @@ class Main:
         for i in range(length):
             print('     ', actual[i], '\t\t       ', solicitado[i], '\t\t       ', tiempo_espera[i],
                   '\t\t     ', desplazamiento[i])
+
+        print('\nDesplazamiento Total: ', self.desplazamiento_total(desplazamiento), '\n')
+        print('Tiempo promedio de espera: ', self.promedio_espera(tiempo_espera), '\n')
         print("\n==========================================================================================\n")
+
+
         pass
 
     def ingreso_num_peticiones(self):
@@ -130,6 +135,23 @@ Entre [0-1] que direccion desea que tome el metodo SCAN? : """
             except ValueError:
                 print('\nEl valor que ingreso no es un numero, por favor, vuelva a intentarlo.\n')
         return bit
+        pass
+
+    def desplazamiento_total(self, desplazamiento):
+        total = 0
+        for i in desplazamiento:
+            total += i
+        return total
+        pass
+
+    def promedio_espera(self, espera):
+        num_proc = len(self.buffer_datos)
+
+        tpe = 0
+        for i in espera:
+            tpe += i
+        tpe = tpe / float(num_proc)
+        return tpe
         pass
 
     def metodos(self, opc):
