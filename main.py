@@ -64,6 +64,9 @@ class Main:
         while (True):
             try:
                 num_peticiones = int(input('Cuantas peticiones va a ingresar? : '))
+                if num_peticiones < 1:
+                    print("\n No se permiten valores menores o iguales a 0. Porfavor, vuelva a intentarlo\n")
+                    continue
                 break
             except ValueError:
                 print('\nEl valor que ingreso no es un numero, por favor, vuelva a intentarlo.\n')
